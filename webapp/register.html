@@ -1,0 +1,96 @@
+<!doctype>
+
+<html>
+
+<head>
+
+<title>kdenlive rockers</title>
+
+<link rel="icon" href="raja.ico"/>
+
+<script>
+	
+function lstore()
+{
+	if(localStorage.getItem(document.getElementById("k").value)==null)
+		{
+			if(document.getElementById("p").value==document.getElementById("rp").value)
+			{	
+				var l={"name":document.getElementById("k").value,"email":document.getElementById("e").value,"con":document.getElementById("c").value,"pass":document.getElementById("p").value};
+				var obj=JSON.stringify(l);
+				localStorage.setItem(document.getElementById("k").value,obj);
+				return true;
+			}
+			else 
+			{
+				document.getElementById("match").innerHTML="retype passward (password dosn't match)";
+				return false;
+			}
+		}
+		else
+		{
+			document.getElementById("nmatch").innerHTML="username existed please register with another user name";
+       		return false;
+		}
+	
+}
+	
+
+</script> 
+
+<style>
+
+	body
+	{
+		background-color:#888888;
+	}
+
+
+</style>
+
+</head>
+
+<body >
+
+<fieldset>
+
+<Pre>qASAqw
+
+<h1 style="color:red"><marquee direction="right">welcome to NO.1 ECOMMERCE</marquee></h1>
+
+<h1 style="color:red"><center>KIRANA BAZAR</center></h1>
+
+<center><h2 style="color:green">REGISTRATION FORM</h2><center>
+
+<div align="center"; style="color:skyblue,red">
+
+<form action="tankyou.html" onsubmit=" return lstore();">
+
+NAME*    :     <input type="text" name="name" placeholder="enter your name"required="true" id="k" ><br><p style="color:red" id="nmatch"></p><br>
+	
+contact *:     <input type="tel" name="contact" placeholder="+91    " required="true" id="c" ><br>
+	
+email *  :     <input type="email" name="email" placeholder="email address or" required="true" id="e"><br>
+	
+password*:     <input type="password" name="password" placeholder="set password" required="true" id="p"><p style="color:red" id="match"></p><br>
+	
+password*:     <input type="password" name="password" placeholder="re-enter password" required="true" id="rp"><br>
+	
+<input type="submit" value="submit"><br>
+<input type="reset" value="reset" >
+	
+<h1 style="color:red"><marquee>REGISTER AND LOGIN TO GET SERVICES PROVIDED BY THE TRUE RETAILERS</marquee></h1>
+
+
+</pre>
+
+</fieldset>
+
+
+</form>
+
+</div>
+
+</body>
+
+</html>

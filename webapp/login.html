@@ -1,0 +1,86 @@
+<!doctype html>
+
+<title> USER LOGIN</title>
+<script>
+
+function valid()
+
+{
+	if(localStorage.getItem(document.getElementById("k").value)!=null)
+	{
+		var o=localStorage.getItem(document.getElementById("k").value);
+		var obj=JSON.parse(o);
+		var l={"mine":document.getElementById("p").value};
+		if(obj.pass==l.mine)
+		{
+			return true;
+		}
+		else
+		{
+			document.getElementById("lpmatch").innerHTML="password doesnt match";
+			return false;
+		}
+
+	}
+	else
+	{
+		document.getElementById("lumatch").innerHTML="username doesnt exists";
+		return false;
+	}
+
+}
+
+</script>
+
+<html>
+
+<head>
+
+<style>
+
+h1
+{
+	text-align:center;
+}
+body
+{
+	background-color:#888888 ;
+}
+
+
+</style>
+
+</head>
+
+<body>
+
+	<link rel="icon" href=".ico"/>
+
+	<h1> KIRANABAZAR.com </h1>
+<br>
+<br>
+
+	<form action="tankyou.html" onsubmit="return valid();">
+	
+	<font color="blue">USERNAME</font>
+	
+	<input style="color:#669966" type="text" name="username" placeholder="username" id="k" required="true"><br><br><p style="color:red" id="lumatch"></p><br>
+
+	<font color="blue">PASSWORD</font>
+		
+	<input style="color:#669966" type="password" name="password" placeholder="password" required="true" id="p"><br><br><p style="color:red" id="lpmatch"></p><br>	
+		
+	<a href="forget.html" target="-blank">forgot password</a>
+		
+	<input type="submit" value="LOGIN"> <br>
+	
+	<font color="blue">Not registered click below to register</font><br>
+
+	<a href="register.html" target="-blank">signup</a>
+
+	</form>
+
+
+</body>
+
+</html>
